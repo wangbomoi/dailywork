@@ -10,14 +10,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import beans.HelloService;
 import beans.ObjectFactory;
 import beans.ObjectFactoryBean;
-public class TestBeans01 {
-	private ClassPathXmlApplicationContext ctx;
-	@Before
-	public void init(){
-		//初始化spring的IOC容器
-		ctx = new ClassPathXmlApplicationContext(
-		"spring-configs.xml");
-	}
+/**
+ * 测试对象的创建
+ * @author 速度
+ */
+public class TestBeans01 extends TestBase{
+
 	/***
 	 * 思考:
 	 * 1)HelloService对象何时创建?(由配置决定)
@@ -74,11 +72,7 @@ public class TestBeans01 {
 		System.out.println(of1);
 	}
 	
-	@After
-	public void destory(){
-		//销毁容器
-		ctx.close();
-	}
+	
 	
 	
 }
